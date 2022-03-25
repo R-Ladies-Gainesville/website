@@ -1,4 +1,4 @@
-baseURL = "/"
+baseURL = "https://rladies-gnv.netlify.app/"
 theme = "hugo-apero"
 languageCode = "en"
 title = "R-Ladies Gainesville"
