@@ -1,0 +1,179 @@
+---
+title: "Tutorial Template"
+author: "Amy Kendig"  
+date: 2022-01-28
+categories:
+tags: ["R Markdown"]
+---
+
+<script src="{{< blogdown/postref >}}index_files/header-attrs/header-attrs.js"></script>
+
+
+<p>Thumbnail image credit: <a href="https://unsplash.com/@etiennegirardet?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Etienne Girardet</a> on <a href="https://unsplash.com/s/photos/form?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></p>
+<div id="introduction" class="section level2">
+<h2>Introduction</h2>
+<p>This is a template for tutorials, which are instructive documents that guide a learner through a skill using examples.</p>
+<p>Replace this text with a description of you tutorial. Include clear learning objectives. For example:</p>
+<p>Have you ever learned a skill in R and wanted to share it with others? In this tutorial, we’ll walk through how to create tutorials so that you can easily share your skills!</p>
+<div id="learning-objectives" class="section level4">
+<h4>Learning objectives</h4>
+<ul>
+<li>Become familiar with the tutorial template</li>
+<li>Adapt the tutorial template to your needs</li>
+<li>Create beautiful and clear tutorials for learneRs</li>
+</ul>
+</div>
+</div>
+<div id="editing-this-template" class="section level2">
+<h2>Editing this template</h2>
+<div id="accessing-the-template" class="section level4">
+<h4>Accessing the template</h4>
+<p>If you do not use Github, go to the <a href="https://github.com/R-Ladies-Gainesville/tutorials">tutorials repository home page</a>, click <code>Code</code>, and click <code>Download ZIP</code>. Open the <code>tutorial_template.Rmd</code> file in RStudio.</p>
+<p>If you use Github, <a href="https://docs.github.com/en/get-started/using-git/getting-changes-from-a-remote-repository">clone</a> the <a href="https://github.com/R-Ladies-Gainesville/tutorials">tutorials repository</a> and edit the <code>tutorial_template.Rmd</code> file in RStudio.</p>
+</div>
+<div id="r-markdown" class="section level4">
+<h4>R Markdown</h4>
+<p>This template is written in an R Markdown document. This type of document is best opened and edited in RStudio. R Markdown documents allow you to include text (like this), code (see below), and output of code, like figures, in a single document. You can learn more about R Markdown <a href="https://rmarkdown.rstudio.com/lesson-1.html">here</a> (check out the Cheatsheet!).</p>
+</div>
+<div id="metadata" class="section level4">
+<h4>Metadata</h4>
+<p>If you haven’t already, replace the <code>Tutorial Title</code> and <code>Author</code> information in the metadata block at the top of this document with your information.</p>
+</div>
+<div id="section-titles" class="section level4">
+<h4>Section titles</h4>
+<p>This section is titled <strong>Editing this template</strong> and the sub-section is titled <strong>Section titles</strong>, but your tutorial won’t necessarily need these sections. Consider the sections that you want in your tutorial and revise the headers throughout (the text that starts with ##) or create your own section headers.</p>
+</div>
+</div>
+<div id="examples" class="section level2">
+<h2>Examples</h2>
+<p>Examples are key to meeting your learning objectives. Consider your audience, learning objectives, and narrative when writing examples (see <a href="https://carpentries.github.io/curriculum-development/">The Carpentries Curriculum Development</a> for tips). The learner needs to be able to reproduce examples from your tutorial on their computer. To do this, we look to advice on how to create a <a href="https://stackoverflow.com/a/5963610">minimal, reproducible example</a>. Examples may include:</p>
+<ul>
+<li>Problem or goal</li>
+<li>Dataset</li>
+<li>Solution code</li>
+<li>Information for reproducibility</li>
+</ul>
+</div>
+<div id="dataset" class="section level2">
+<h2>Dataset</h2>
+<p>Almost all examples require an input. That is what is meant by “dataset”. You can create your own dataset or use one that is built into R.</p>
+<p><strong>Create-your-own:</strong></p>
+<p>Known values</p>
+<pre class="r"><code>x &lt;- c(1, 5, 9, 10)</code></pre>
+<p>Random values (set seed to make it reproducible)</p>
+<pre class="r"><code>set.seed(20)
+y &lt;- rnorm(4)</code></pre>
+<p>See guidance on <a href="https://stackoverflow.com/a/5963610">minimal, reproducible example</a> for more examples.</p>
+<p><strong>Built-in:</strong></p>
+<p>Available datasets in R (run in RStudio to see list)</p>
+<pre class="r"><code>data() </code></pre>
+<p>A popular example dataset is ‘iris’</p>
+<pre class="r"><code>head(iris)
+#&gt;   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+#&gt; 1          5.1         3.5          1.4         0.2  setosa
+#&gt; 2          4.9         3.0          1.4         0.2  setosa
+#&gt; 3          4.7         3.2          1.3         0.2  setosa
+#&gt; 4          4.6         3.1          1.5         0.2  setosa
+#&gt; 5          5.0         3.6          1.4         0.2  setosa
+#&gt; 6          5.4         3.9          1.7         0.4  setosa</code></pre>
+<p>Another great example dataset is ‘penguins’</p>
+<pre class="r"><code># install the package if it&#39;s not already installed
+if(!(&quot;palmerpenguins&quot; %in% installed.packages()[,&quot;Package&quot;]))
+  install.packages(&quot;palmerpenguins&quot;)
+
+# load package
+library(palmerpenguins)
+
+# show data
+head(penguins)
+#&gt; # A tibble: 6 × 8
+#&gt;   species island bill_length_mm bill_depth_mm flipper_length_… body_mass_g sex  
+#&gt;   &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;            &lt;int&gt;       &lt;int&gt; &lt;fct&gt;
+#&gt; 1 Adelie  Torge…           39.1          18.7              181        3750 male 
+#&gt; 2 Adelie  Torge…           39.5          17.4              186        3800 fema…
+#&gt; 3 Adelie  Torge…           40.3          18                195        3250 fema…
+#&gt; 4 Adelie  Torge…           NA            NA                 NA          NA &lt;NA&gt; 
+#&gt; 5 Adelie  Torge…           36.7          19.3              193        3450 fema…
+#&gt; 6 Adelie  Torge…           39.3          20.6              190        3650 male 
+#&gt; # … with 1 more variable: year &lt;int&gt;</code></pre>
+</div>
+<div id="solution-code" class="section level2">
+<h2>Solution code</h2>
+<p>We will use an example from the <a href="https://allisonhorst.github.io/palmerpenguins/articles/intro.html">palmerpenguins vignette</a> to demonstrate solution code. For this example, the goal is to create a scatterplot for data with different categories.</p>
+<p><strong>Install packages if they’re not already installed</strong></p>
+<p>This handy code is from <a href="https://stackoverflow.com/a/4090208">Stackoverflow</a>. List the packages a learner would need for your tutorial in the first line.</p>
+<pre class="r"><code>list.of.packages &lt;- c(&quot;palmerpenguins&quot;, &quot;dplyr&quot;, &quot;ggplot2&quot;)
+new.packages &lt;- list.of.packages[!(list.of.packages %in% installed.packages()[,&quot;Package&quot;])]
+if(length(new.packages)) install.packages(new.packages)</code></pre>
+<p><strong>Load packages</strong></p>
+<p>We use the code chunk option “message = F” to suppress messages generated when packages load.</p>
+<pre class="r"><code>library(palmerpenguins)
+library(dplyr)
+library(ggplot2)</code></pre>
+<p><strong>Settings</strong></p>
+<p>Include figure settings, saved variables, and create-your-own datasets.</p>
+<pre class="r"><code>theme_set(theme_minimal())</code></pre>
+<p><strong>Solution</strong></p>
+<p>Code to create scatterplot. We use the option out.width to make the figure clearer and smaller.</p>
+<pre class="r"><code>ggplot(data = penguins, aes(x = flipper_length_mm, y = body_mass_g)) +
+  geom_point(aes(color = species,
+                 shape = species),
+             size = 2) +
+  scale_color_manual(values = c(&quot;darkorange&quot;,&quot;darkorchid&quot;,&quot;cyan4&quot;))
+#&gt; Warning: Removed 2 rows containing missing values (geom_point).</code></pre>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-9-1.png" width="50%" /></p>
+<p>If there are variations on your solution, provide more examples!</p>
+</div>
+<div id="information-for-reproducibility" class="section level2">
+<h2>Information for reproducibility</h2>
+<p>R and R packages are continuously updated and examples that work under a certain set of conditions may not work under another set. Ideally, you would update your tutorial when key software is updated to maintain working examples. However, that may not be feasible, and the next best option is to provide learners with all the necessary information about your computing environment. This can help them identify differences with their computing environment that may be preventing the example from running as expected.</p>
+<p><strong>My computing environment:</strong></p>
+<p>Session information</p>
+<pre class="r"><code>sessionInfo()
+#&gt; R version 4.1.2 (2021-11-01)
+#&gt; Platform: x86_64-apple-darwin17.0 (64-bit)
+#&gt; Running under: macOS Big Sur 10.16
+#&gt; 
+#&gt; Matrix products: default
+#&gt; BLAS:   /Library/Frameworks/R.framework/Versions/4.1/Resources/lib/libRblas.0.dylib
+#&gt; LAPACK: /Library/Frameworks/R.framework/Versions/4.1/Resources/lib/libRlapack.dylib
+#&gt; 
+#&gt; locale:
+#&gt; [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+#&gt; 
+#&gt; attached base packages:
+#&gt; [1] stats     graphics  grDevices utils     datasets  methods   base     
+#&gt; 
+#&gt; other attached packages:
+#&gt; [1] ggplot2_3.3.5        dplyr_1.0.7          palmerpenguins_0.1.0
+#&gt; 
+#&gt; loaded via a namespace (and not attached):
+#&gt;  [1] highr_0.9        pillar_1.7.0     bslib_0.3.1      compiler_4.1.2  
+#&gt;  [5] jquerylib_0.1.4  tools_4.1.2      digest_0.6.29    gtable_0.3.0    
+#&gt;  [9] jsonlite_1.8.0   evaluate_0.15    lifecycle_1.0.1  tibble_3.1.6    
+#&gt; [13] pkgconfig_2.0.3  rlang_1.0.2      cli_3.2.0        DBI_1.1.2       
+#&gt; [17] rstudioapi_0.13  yaml_2.3.5       blogdown_1.7     xfun_0.30       
+#&gt; [21] fastmap_1.1.0    withr_2.4.3      stringr_1.4.0    knitr_1.37      
+#&gt; [25] generics_0.1.1   sass_0.4.0       vctrs_0.3.8      grid_4.1.2      
+#&gt; [29] tidyselect_1.1.1 glue_1.6.2       R6_2.5.1         fansi_1.0.2     
+#&gt; [33] rmarkdown_2.13   bookdown_0.24    farver_2.1.0     purrr_0.3.4     
+#&gt; [37] magrittr_2.0.2   scales_1.1.1     ellipsis_0.3.2   htmltools_0.5.2 
+#&gt; [41] assertthat_0.2.1 colorspace_2.0-2 labeling_0.4.2   utf8_1.2.2      
+#&gt; [45] stringi_1.7.6    munsell_0.5.0    crayon_1.5.0</code></pre>
+<p>RStudio version</p>
+<pre class="r"><code># commented out for website compatibility, uncomment on your computer
+# rstudioapi::versionInfo()$version</code></pre>
+</div>
+<div id="sharing-your-tutorial" class="section level2">
+<h2>Sharing your tutorial</h2>
+<div id="slides" class="section level3">
+<h3>Slides</h3>
+<p>If you’re sharing your tutorial at an R-Ladies meeting, consider making slides to go along with it.</p>
+<p>See the <a href="https://github.com/R-Ladies-Gainesville/presentations">R-Ladies Gainesville presentations repository</a> to download the the R Markdown file <code>tutorial_template.Rmd</code>. The tutorial_template presentation is created with the <a href="https://slides.yihui.org/xaringan/#1">xaringan</a> package and the RLadies theme by <a href="https://www.apreshill.com/project/rladies-xaringan/">Alison Hill</a>.</p>
+</div>
+<div id="github" class="section level3">
+<h3>Github</h3>
+<p>Now it’s time to add your tutorial to the R-Ladies Gainesville <a href="https://github.com/R-Ladies-Gainesville/tutorials">tutorials repository</a>. This will make it easier for others to provide feedback and for people to use your tutorial!</p>
+<p>If you do not use Github, email your <code>.Rmd</code> file to R-Ladies Gainesville at <a href="mailto:gainesville@rladies.org" class="email">gainesville@rladies.org</a>.</p>
+</div>
+</div>

@@ -1,0 +1,299 @@
+---
+title: "Getting Around GitHub"
+author: "Michelle Slawinski"  
+date: 2022-03-11
+categories:
+tags: ["R Markdown", "GitHub"]
+---
+
+<script src="{{< blogdown/postref >}}index_files/header-attrs/header-attrs.js"></script>
+
+
+<p>Thumbnail image credit: <a href="https://unsplash.com/@rabbit_in_blue?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Karolina Kołodziejczak</a> on <a href="https://unsplash.com/s/photos/maze?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></p>
+<div id="welcome" class="section level1">
+<h1>Welcome</h1>
+<p>Git.. GitHub.. What are they? Why do they matter? In this tutorial we will introduce you to them and provide you with the basics! This presentation is for individuals with limited knowledge on git and graphical user interfaces, although those with a robust background are more than welcome to drop some knowledge on us! From one novice git user to another, we will walk through it together.</p>
+</div>
+<div id="learning-objectives" class="section level1">
+<h1>Learning Objectives</h1>
+<ol style="list-style-type: decimal">
+<li>Describe git and graphical user interfaces</li>
+<li>Set up and connect git, GitHub and RStudio</li>
+<li>Practice navigating how to fork, branch, commit, and request a pull on Github</li>
+</ol>
+</div>
+<div id="git" class="section level1">
+<h1>Git</h1>
+<div id="what-is-git" class="section level2">
+<h2>What is Git?</h2>
+<p>Have you ever tried working on a project or a specific piece of code with a colleague but could not figure out what changes they made? Or have you ever overwritten your own code and had to rewrite the chunk from the beginning?</p>
+<p>Frustrating, right? Well, git is a version control that allows you to do better. Be a better coder, communicator and person because the time you will save can then be spent elsewhere!</p>
+</div>
+<div id="set-up" class="section level2">
+<h2>Set Up</h2>
+<p>Let’s get started shall we!</p>
+<p>First, check to see if you already have Git installed.</p>
+<p>On Windows, look for an application called “Git Bash” and on Macs, search for an application called “Terminal.” Type “git version” into the terminal. If you receive a version number, Git is installed. However, if the terminal is saying unknown command, then Git it not installed.</p>
+<p>No Git? No problem. Navigate to <a href="https://git-scm.com/">git</a> and click <em>Downloads.</em> Select the software appropriate for your system and follow the remaining installation steps.</p>
+<p><strong>Windows</strong></p>
+<ol style="list-style-type: decimal">
+<li>Select <strong>“Click here to download”</strong> This should be the version you need however, you can look below to see additional options.</li>
+<li>Allow installer to download then open.</li>
+<li>“Do you want to allow this app to make changes to this device?” Yes, yes you do! You will need administrative access to your computer for this.</li>
+<li>Use the defaults throughout the installation process.</li>
+</ol>
+<p><strong>Mac</strong></p>
+<p>If you have Git installed, then we will most likely just need to update it. To update git follow this <a href="https://modulesunraveled.com/installing-git/updating-git-if-you-have-only-version-comes-xcode-or-command-line-developer-tools">video</a>!</p>
+<p>Otherwise, to install git:</p>
+<ol style="list-style-type: decimal">
+<li>Select <strong>“Click here to download.”</strong> This should be the version you need however, you can look below to see additional options.</li>
+<li>Click on the Binary installer link and select download.</li>
+<li>Once it is downloaded, open the file, locate the package, right click and select “Open.”</li>
+<li>Follow the prompts.</li>
+<li>For help with the remaining installation process, follow this
+<a href="https://modulesunraveled.com/installing-git/installing-git-if-you-do-not-have-xcode-or-command-line-developer-tools-installed">video</a>.</li>
+</ol>
+</div>
+<div id="git-configuration-basics" class="section level2">
+<h2>Git Configuration Basics</h2>
+<p>When you configure git you will have options on what level you would like to make configurations.</p>
+<pre><code> System Level: git config --system
+
+ User Level: git config --global
+
+ Project Level: git config</code></pre>
+<p>Let’s set up some basic git configurations for our system.</p>
+<ol style="list-style-type: decimal">
+<li>Username: When you set your user name using global, git will use this information for anything you do.
+<ul>
+<li>git config --global user.name “Michelle Slawinski”</li>
+</ul></li>
+<li>Email: Do the same thing with your email address. This should be the email you used to set up your GitHub account. If you have not signed up for a GitHub account, do that now.
+<ul>
+<li>git config --global user.email “my_email.com”</li>
+</ul></li>
+<li>Viewing git configurations: Type this command and scroll to the bottom to see the configurations you set up.
+<ul>
+<li>git config --list</li>
+</ul></li>
+</ol>
+<p>For other configuration options see <a href="https://git-scm.com/docs/git-config">here</a>.</p>
+</div>
+<div id="help-options" class="section level2">
+<h2>Help Options</h2>
+<p>Are you stuck? Ask Git! In the terminal, type “git help” and it will return some common Git commands. If you want to learn more about a specific command such as branching, you can type “git help branch” and it will pull up a manual on branching.</p>
+<div class="figure">
+<img src="{{< blogdown/postref >}}index_files/figure-html/git_help_branch.png" alt="" />
+<p class="caption">image</p>
+</div>
+</div>
+<div id="git-resources" class="section level2">
+<h2>Git Resources</h2>
+<ul>
+<li><a href="https://git-scm.com/book/en/v2">Pro Git Book</a></li>
+<li><a href="https://git-scm.com/docs">Git Reference Guides</a></li>
+<li><a href="https://github.com/git-guides/install-git">GitHub Git Guides</a></li>
+<li><a href="https://github.com/dictcp/awesome-git">‘Awesome Git’ Repository</a></li>
+<li><a href="https://www.linkedin.com/learning-login/share?account=42166124&amp;forceAccount=false&amp;redirect=https%3A%2F%2Fwww.linkedin.com%2Flearning%2Fgit-essential-training-the-basics%3Ftrk%3Dshare_ent_url%26shareId%3DSxKxywffQ8iDu%252FzDfk84uw%253D%253D">LinkedIn Learning Git Essential Training: The Basics</a></li>
+</ul>
+</div>
+</div>
+<div id="graphical-user-interface" class="section level1">
+<h1>Graphical User Interface</h1>
+<div id="what-is-a-graphical-user-interface" class="section level2">
+<h2>What is a Graphical User Interface?</h2>
+<p>Git but better. Graphical User Interfaces (GUIs) are where you can use Git but in a more visually pleasing manner. Instead of using command lines in Git, you can use a click-based GUI. Think of it like using R/SAS versus SPSS or Jasp.</p>
+</div>
+<div id="popular-guis" class="section level2">
+<h2>Popular GUIs</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Microsoft</th>
+<th>Mac</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>GitHub Desktop</td>
+<td>GitHub Desktop</td>
+</tr>
+<tr class="even">
+<td>GitKraken</td>
+<td>GitKraken</td>
+</tr>
+<tr class="odd">
+<td>Sourcetree</td>
+<td>Sourcetree</td>
+</tr>
+<tr class="even">
+<td>TortoiseGit</td>
+<td>Fork</td>
+</tr>
+<tr class="odd">
+<td>SmartGit</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="gui-resources" class="section level2">
+<h2>GUI Resources</h2>
+<ul>
+<li><a href="https://git-scm.com/downloads/guis">GUI Clients</a></li>
+<li><a href="https://docs.github.com/en">GitHub Help</a></li>
+<li><a href="https://www.youtube.com/channel/UCP7RrmoueENv9TZts3HXXtw">GitHub Training and Guides Channel</a></li>
+<li><a href="https://support.gitkraken.com/">GitKraken Support</a></li>
+<li><a href="https://confluence.atlassian.com/get-started-with-sourcetree">Sourcetree Support</a></li>
+</ul>
+</div>
+</div>
+<div id="github" class="section level1">
+<h1>GitHub</h1>
+<div id="what-is-github" class="section level2">
+<h2>What is GitHub?</h2>
+<p>GitHub makes it easier on us as human beings! GitHub is a cloud based management tool for your code.
+Think of it like Google Docs’ tracked changes feature. In any document, you can use tracked changes to <em>visualize</em> the changes you or someone else are making. In GitHub, we are using a similar way to visualize version control. This is extremely important when you start working in teams or on a large project. You will want to have changes to your code saved so that you can refer back if you need to.</p>
+</div>
+<div id="setup" class="section level2">
+<h2>Setup</h2>
+<p>Navigate <a href="https://desktop.github.com">here</a> to download GitHub Desktop and follow prompts.</p>
+<p>Note: You will want to create an account and hold on to the email you use for this account.</p>
+</div>
+</div>
+<div id="rstudio" class="section level1">
+<h1>RStudio</h1>
+<div id="setup-1" class="section level2">
+<h2>Setup</h2>
+<pre class="r"><code>library(usethis)</code></pre>
+<p>You should have the latest version of R and Rstudio downloaded. To check your current version of R:</p>
+<pre class="r"><code>R.version.string
+#&gt; [1] &quot;R version 4.1.2 (2021-11-01)&quot;</code></pre>
+<p>You will also want to have git installed at this point. To introduce yourself to git using RStudio:</p>
+<pre class="r"><code>use_git_config(user.name = &quot;Michelle Slawinski&quot;, user.email = &quot;slawinsm@gmail.com&quot;) 
+  #use.email should be the same as your GitHub account</code></pre>
+<p>To configure GitHub with RStudio, you will need to set up a token in RStudio. This is basically a secure connection between GitHub and RStudio:</p>
+<pre class="r"><code>usethis::create_github_token()
+#&gt; • Call `gitcreds::gitcreds_set()` to register this token in the local Git credential store
+#&gt;   It is also a great idea to store this token in any password-management software that you use
+#&gt; • Open URL &#39;https://github.com/settings/tokens/new?scopes=repo,user,gist,workflow&amp;description=DESCRIBE THE TOKEN\&#39;S USE CASE&#39;
+gitcreds::gitcreds_set
+#&gt; function (url = &quot;https://github.com&quot;) 
+#&gt; {
+#&gt;     if (!is_interactive()) {
+#&gt;         throw(new_error(&quot;gitcreds_not_interactive_error&quot;, message = &quot;`gitcreds_set()` only works in interactive sessions&quot;))
+#&gt;     }
+#&gt;     stopifnot(is_string(url), has_no_newline(url))
+#&gt;     check_for_git()
+#&gt;     current &lt;- tryCatch(gitcreds_get(url, use_cache = FALSE, 
+#&gt;         set_cache = FALSE), gitcreds_no_credentials = function(e) NULL)
+#&gt;     if (!is.null(current)) {
+#&gt;         gitcreds_set_replace(url, current)
+#&gt;     }
+#&gt;     else {
+#&gt;         gitcreds_set_new(url)
+#&gt;     }
+#&gt;     msg(&quot;-&gt; Removing credetials from cache...&quot;)
+#&gt;     gitcreds_delete_cache(gitcreds_cache_envvar(url))
+#&gt;     msg(&quot;-&gt; Done.&quot;)
+#&gt;     invisible()
+#&gt; }
+#&gt; &lt;bytecode: 0x7fea04498208&gt;
+#&gt; &lt;environment: 0x7fea04425d30&gt;</code></pre>
+</div>
+<div id="rstudio-resources" class="section level2">
+<h2>RStudio Resources</h2>
+<ul>
+<li><a href="https://r-bio.github.io/intro-git-rstudio/">An Introduction to Git and how to use it with RStudio</a></li>
+<li><a href="https://resources.github.com/whitepapers/github-and-rstudio/">GitHub and RStudio</a></li>
+<li><a href="https://happygitwithr.com/connect-intro.html">Happy Git and GitHub for the useR</a></li>
+</ul>
+</div>
+</div>
+<div id="last-minute-things" class="section level1">
+<h1>Last Minute Things</h1>
+<div id="dictionary" class="section level2">
+<h2>Dictionary</h2>
+<table>
+<colgroup>
+<col width="47%" />
+<col width="52%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Term</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Shell</td>
+<td>A terminal that uses written commands to interact with your operating system</td>
+</tr>
+<tr class="even">
+<td>Git Directory</td>
+<td>Umbrella terms for all of your files and folders</td>
+</tr>
+<tr class="odd">
+<td>Modify</td>
+<td>Changed the file but have not committed it to your local system</td>
+</tr>
+<tr class="even">
+<td>Staged/Indexed</td>
+<td>Marked a modified file to go into your next commit snapshot</td>
+</tr>
+<tr class="odd">
+<td>Commit</td>
+<td>Save the state of your project in your local system</td>
+</tr>
+<tr class="even">
+<td>Branch</td>
+<td>When you duplicate part of a repository</td>
+</tr>
+<tr class="odd">
+<td>Merge</td>
+<td>After you finish updating the code you branched, you can merge it back into the project’s main source code</td>
+</tr>
+<tr class="even">
+<td>Push</td>
+<td>Once you commit your project or file to your local system, you have the option to push it to remote GitHub</td>
+</tr>
+<tr class="odd">
+<td>Pull</td>
+<td>If your repository has new changes in GitHub, you can download and integrate those remote changes by using ‘pull’</td>
+</tr>
+<tr class="even">
+<td>Fetch</td>
+<td>To see if there are remote changes, you can use fetch to see what was updated. Fetch will not merge your updates though</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="tips" class="section level2">
+<h2>Tips</h2>
+<ol style="list-style-type: decimal">
+<li>Update some basic profile features GitHub offers like a picture, occupation, or location! Click your picture in the top right corner after logging in and select ‘Settings.’</li>
+<li>You can also personalize your profile’s ReadMe file with an introduction for people who will visit your page. This is again optional but helps you get noticed. If you want to see some super cool examples, beef up your profile with certain tools, or do some late night reading on how to make your profile stand out, look at this <a href="https://github.com/abhisheknaiidu/awesome-github-profile-readme">repository</a>!</li>
+<li>Make sure you have a ReadMe file for every repository. This serves as an executive summary for your project and saves viewers time on figuring out what the purpose of your project is.</li>
+<li>When you make a commit, make sure you are descriptive, especially if you are working on a team. You can use git to search your commit messages so you’ll want to be descriptive! Google ‘git commit best practices’ and you can look through all the suggestions on how to do this.</li>
+<li>Branch this markdown file and add your own tips!</li>
+</ol>
+</div>
+<div id="lets-practice" class="section level2">
+<h2>Let’s Practice</h2>
+<p>Now that you have an understanding of Git and GUIs such as GitHub, let’s practice!</p>
+<p>We will be practicing how to fork a repository from GitHub, make a change locally, then commit those changes and push them back to GitHub. Ready? Lets get our feet wet.</p>
+<ol style="list-style-type: decimal">
+<li>Navigate to <a href="https://github.com/R-Ladies-Gainesville">RLadies of Gainesville’s GitHub</a></li>
+<li>Locate and click on the “practice” repository</li>
+<li>In the upper right hand corner, click “Fork”
+Once you have it forked, you will see that it is in your remote GitHub. Now that you have it remotely, we will want to get access to it locally so that we can add to the repository.</li>
+<li>Click into the ‘practice’ repository if you are not already in it and click on the ’Code” drop down.</li>
+<li>Select Open with GitHub Desktop. Once you click this, GitHub Desktop should open with a screen asking you where you would like to place the repository on your desktop. Go ahead and find where you would like to put the repository.</li>
+<li>At the top of GitHub Desktop, click the ‘Current Branch’ and choose ‘New Branch.’</li>
+<li>Name the branch your first and last name: MichelleSlawinski. There are also best practices for naming branches but it can also rely on what your team prefers.</li>
+<li>Now open the ‘GettingAroundGitHub_Participants’ file in RStudio from the practice repository and follow the directions in there.</li>
+</ol>
+<p>&amp; that’s it!</p>
+</div>
+</div>
