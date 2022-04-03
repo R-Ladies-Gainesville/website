@@ -18,7 +18,7 @@ links:
 - icon: github
   icon_pack: fab
   name: code
-  url: https://github.com/slawinsm/GitHub-Tutorial
+  url: https://github.com/R-Ladies-Gainesville/tutorials/tree/main/GitHub
 - icon: meetup
   icon_pack: fab
   name: meetup
