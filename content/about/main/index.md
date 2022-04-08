@@ -12,7 +12,7 @@ intro: |
   
   ![](/img/Kendig.png)
   
-  [Amy Kendig](https://amykendig.rbind.io/)
+  Amy Kendig
   
   ![](/img/Klarenberg.png)
   
@@ -25,6 +25,11 @@ intro: |
   ![](/img/Tavares.png)
   
   Yasmin Tavares
+  
+  **Previous leadership**  
+  Javi Rudolph  
+  Virnaliz Cruz  
+  Punam Amratia
   
 show_outro: false
 outro:
