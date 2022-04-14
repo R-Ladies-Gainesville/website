@@ -17,6 +17,10 @@ intro: |
   ![](/img/Klarenberg.png)
   
   Geraldine Klarenberg
+  
+  ![](/img/Rudolph.png)
+  
+  Javi Rudolph
     
   ![](/img/Sauby.png)
   
@@ -27,7 +31,6 @@ intro: |
   Yasmin Tavares
   
   **Previous leadership**  
-  Javi Rudolph  
   Virnaliz Cruz  
   Punam Amratia
   
